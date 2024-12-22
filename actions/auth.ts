@@ -20,12 +20,12 @@ const getUserByEmail = async (email: string) => {
 };
 
 export const login = async (provider: string) => {
-  await signIn(provider, { redirectTo: "/" });
+  await signIn(provider, { redirectTo: "/dashboard" });
   revalidatePath("/");
 };
 
 export const logout = async () => {
-  await signOut({ redirectTo: "/" });
+  await signOut({ redirectTo: "/sign-in" });
   revalidatePath("/");
 };
 
